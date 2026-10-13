@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/3.0.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>NextCode | Empleados</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg barra-barber">
+        <div class="container-fluid px-0">
+            <a class="navbar-brand logo" href="index.html">NextCodeBarber</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir navegacion">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav menu me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">index</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Barberos.html" aria-current="page">Empleados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Reservas.html">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+                </ul>
+
+                <form class="d-flex buscador my-3 my-lg-0" role="search">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Buscar">
+                        <button class="btn btn-search" type="submit">Search</button>
+                    </div>
+                </form>
+
+                <div class="usuarios ms-lg-3 mt-2 mt-lg-0 d-flex gap-2">
+
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownSignup"
+                            data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            Sign-up
+                        </button>
+                        <form class="dropdown-menu dropdown-menu-end p-4 shadow" style="width: 280px;"
+                            aria-labelledby="dropdownSignup">
+                            <h5 class="mb-3">Registro</h5>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="tu@email.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="signupPassword"
+                                    placeholder="Contraseña">
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100">Registrarse</button>
+                        </form>
+                    </div>
+
+                    <div class="dropdown" id="loginDropdownWrap">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownLogin"
+                            data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            Login
+                        </button>
+                        <form class="dropdown-menu dropdown-menu-end p-4 shadow" style="width: 280px;"
+                            aria-labelledby="dropdownLogin" id="formLogin" novalidate>
+                            <h5 class="mb-3">Iniciar Sesión</h5>
+                            <div class="alert alert-danger py-2 small d-none" role="alert" id="loginError"></div>
+                            <div class="mb-3">
+                                <label for="loginUser" class="form-label">Usuario o correo electrónico</label>
+                                <input type="text" class="form-control" id="loginUser"
+                                    placeholder="usuario o tu@email.com" autocomplete="username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="loginPassword"
+                                    placeholder="Contraseña" autocomplete="current-password">
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100">Entrar</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="mb-4 titulo-seccion">Empleados</h2>
+        <div class="table-responsive">
+            <table id="tablita" class="table table-striped align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Cargo</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Horario semanal</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mateo Ramírez</td>
+                        <td>Barbero senior</td>
+                        <td>mateo@nextcode.co</td>
+                        <td>300 456 7890</td>
+                        <td>Lun–Vie: 09:00–18:00<br>Sábado: 09:00–16:00<br>Domingo: Descanso</td>
+                        <td class="text-center text-nowrap">
+                            <button class="btn btn-info btn-sm text-white px-2 py-1 me-1" data-bs-toggle="modal"
+                                data-bs-target="#modalDetalleMateo">Ver detalle</button>
+                            <button class="btn btn-warning btn-sm text-dark px-2 py-1 me-1" data-bs-toggle="modal"
+                                data-bs-target="#modalEditarMateo">Editar</button>
+                            <button class="btn btn-danger btn-sm px-2 py-1" data-bs-toggle="modal"
+                                data-bs-target="#modalEliminarMateo">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>David Torres</td>
+                        <td>Barbero</td>
+                        <td>david@nextcode.co</td>
+                        <td>301 555 1122</td>
+                        <td>Mar–Sáb: 10:00–19:00<br>Lunes: 09:00–15:00<br>Domingo: Descanso</td>
+                        <td class="text-center text-nowrap">
+                            <button class="btn btn-info btn-sm text-white px-2 py-1 me-1" data-bs-toggle="modal"
+                                data-bs-target="#modalDetalleDavid">Ver detalle</button>
+                            <button class="btn btn-warning btn-sm text-dark px-2 py-1 me-1" data-bs-toggle="modal"
+                                data-bs-target="#modalEditarDavid">Editar</button>
+                            <button class="btn btn-danger btn-sm px-2 py-1" data-bs-toggle="modal"
+                                data-bs-target="#modalEliminarDavid">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Santiago Ríos</td>
+                        <td>Barbero y especialista en barba</td>
+                        <td>santiago@nextcode.co</td>
+                        <td>302 444 9988</td>
+                        <td>Lun–Vie: 11:00–20:00<br>Sábado: 09:00–17:00<br>Domingo: Descanso</td>
+                        <td class="text-center text-nowrap">
+                            <button class="btn btn-info btn-sm text-white px-2 py-1 me-1" data-bs-toggle="modal"
+                                data-bs-target="#modalDetalleSantiago">Ver detalle</button>
+                            <button class="btn btn-warning btn-sm text-dark px-2 py-1 me-1" data-bs-toggle="modal"
+                                data-bs-target="#modalEditarSantiago">Editar</button>
+                            <button class="btn btn-danger btn-sm px-2 py-1" data-bs-toggle="modal"
+                                data-bs-target="#modalEliminarSantiago">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDetalleMateo" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalles del Empleado: Mateo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Nombre:</strong> Mateo Ramírez</p>
+                    <p><strong>Cargo:</strong> Barbero senior</p>
+                    <p><strong>Correo:</strong> mateo@nextcode.co</p>
+                    <p><strong>Teléfono:</strong> 300 456 7890</p>
+                    <p class="mb-1"><strong>Horario semanal:</strong></p>
+                    <ul class="mb-0">
+                            <li>Lun–Vie: 09:00–18:00</li>
+                            <li>Sábado: 09:00–16:00</li>
+                            <li>Domingo: Descanso</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEditarMateo" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Empleado: Mateo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control" value="Mateo Ramírez">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Cargo</label>
+                            <input type="text" class="form-control" value="Barbero senior">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Correo</label>
+                            <input type="email" class="form-control" value="mateo@nextcode.co">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" value="300 456 7890">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Guardar cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEliminarMateo" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar al empleado <strong>Mateo Ramírez</strong>?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Sí, eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDetalleDavid" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalles del Empleado: David</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Nombre:</strong> David Torres</p>
+                    <p><strong>Cargo:</strong> Barbero</p>
+                    <p><strong>Correo:</strong> david@nextcode.co</p>
+                    <p><strong>Teléfono:</strong> 301 555 1122</p>
+                    <p class="mb-1"><strong>Horario semanal:</strong></p>
+                    <ul class="mb-0">
+                            <li>Mar–Sáb: 10:00–19:00</li>
+                            <li>Lunes: 09:00–15:00</li>
+                            <li>Domingo: Descanso</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEditarDavid" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Empleado: David</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control" value="David Torres">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Cargo</label>
+                            <input type="text" class="form-control" value="Barbero">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Correo</label>
+                            <input type="email" class="form-control" value="david@nextcode.co">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" value="301 555 1122">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Guardar cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEliminarDavid" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar al empleado <strong>David Torres</strong>?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Sí, eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDetalleSantiago" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalles del Empleado: Santiago</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Nombre:</strong> Santiago Ríos</p>
+                    <p><strong>Cargo:</strong> Barbero y especialista en barba</p>
+                    <p><strong>Correo:</strong> santiago@nextcode.co</p>
+                    <p><strong>Teléfono:</strong> 302 444 9988</p>
+                    <p class="mb-1"><strong>Horario semanal:</strong></p>
+                    <ul class="mb-0">
+                            <li>Lun–Vie: 11:00–20:00</li>
+                            <li>Sábado: 09:00–17:00</li>
+                            <li>Domingo: Descanso</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEditarSantiago" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Empleado: Santiago</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control" value="Santiago Ríos">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Cargo</label>
+                            <input type="text" class="form-control" value="Barbero y especialista en barba">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Correo</label>
+                            <input type="email" class="form-control" value="santiago@nextcode.co">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" value="302 444 9988">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Guardar cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEliminarSantiago" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar al empleado <strong>Santiago Ríos</strong>?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Sí, eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.datatables.net/3.0.4/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/3.0.4/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        new DataTable('#tablita', {
+            language: {
+                search: 'Buscar:',
+                lengthMenu: 'Mostrar _MENU_ registros',
+                info: 'Mostrando _START_ a _END_ de _TOTAL_ registros',
+                paginate: {
+                    first: '«',
+                    previous: '<',
+                    next: '>',
+                    last: '»'
+                }
+            }
+        });
+    </script>
+    <script src="auth.js"></script>
+</body>
+
+</html>

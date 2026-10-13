@@ -1,0 +1,207 @@
+/* =========================================================
+   Next Code Barbería · tema del panel de administración
+   Misma paleta que la barra de navegación del sitio:
+   plum oscuro (#321f2a) + ámbar suave (#ffd9a8)
+   (se carga DESPUÉS de sb-admin-2.min.css para sobrescribirlo)
+   ========================================================= */
+:root {
+    --nc-ink: #321f2a;
+    --nc-ink-deep: #241520;
+    --nc-ink-soft: #4b2f3f;
+    --nc-amber: #ffd9a8;
+    --nc-amber-strong: #e8b266;
+    --nc-amber-deep: #9a6a2f;
+    --nc-gold-text: #a8701c;
+    --nc-terra: #b85a3e;
+    --nc-green: #3c9b78;
+    --nc-cream: #fff8f5;
+    --nc-text-light: #f8e9e8;
+    --nc-muted: #6b5a62;
+}
+
+/* ---------- Base ---------- */
+body,
+#wrapper #content-wrapper {
+    background-color: var(--nc-cream);
+}
+body { font-family: "Trebuchet MS", sans-serif; }
+
+.h1, .h2, .h3, h1.h3 {
+    font-family: Georgia, serif;
+    font-weight: 700;
+}
+
+a { color: var(--nc-amber-deep); }
+a:hover { color: var(--nc-ink); }
+
+/* grises azulados de la plantilla -> grises cálidos */
+.text-gray-900, .text-gray-800 { color: var(--nc-ink) !important; }
+.text-gray-700, .text-gray-600 { color: var(--nc-muted) !important; }
+.text-gray-500, .text-gray-400 { color: #8a7a82 !important; }
+
+/* ---------- Barra lateral ---------- */
+#accordionSidebar {
+    background: linear-gradient(180deg, var(--nc-ink) 0%, var(--nc-ink-deep) 100%) !important;
+}
+#accordionSidebar .sidebar-brand { min-height: 4.5rem; color: var(--nc-amber); }
+#accordionSidebar .sidebar-brand-icon i { color: var(--nc-amber); }
+#accordionSidebar .sidebar-brand-text {
+    font-family: Georgia, serif;
+    letter-spacing: .08em;
+    font-size: .82rem;
+    color: var(--nc-amber);
+}
+#accordionSidebar hr.sidebar-divider { border-top-color: rgba(255, 217, 168, .18); }
+#accordionSidebar .sidebar-heading { color: rgba(255, 217, 168, .6); }
+#accordionSidebar .nav-item .nav-link {
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+    color: rgba(248, 233, 232, .85);
+}
+#accordionSidebar .nav-item .nav-link i { color: var(--nc-amber-strong); }
+#accordionSidebar .nav-item .nav-link:hover {
+    color: var(--nc-amber);
+    background: rgba(255, 217, 168, .08);
+}
+#accordionSidebar .nav-item.active .nav-link {
+    color: var(--nc-amber);
+    font-weight: 700;
+    background: rgba(255, 217, 168, .12);
+    box-shadow: inset 3px 0 0 var(--nc-amber);
+}
+#accordionSidebar .nav-item.active .nav-link i { color: var(--nc-amber); }
+#accordionSidebar #sidebarToggle { background-color: rgba(255, 217, 168, .18); }
+#accordionSidebar #sidebarToggle::after { color: var(--nc-amber); }
+#accordionSidebar #sidebarToggle:hover { background-color: rgba(255, 217, 168, .3); }
+
+/* ---------- Barra superior ---------- */
+.topbar {
+    border-bottom: 3px solid var(--nc-amber);
+    box-shadow: 0 .15rem 1rem rgba(50, 31, 42, .08);
+}
+.topbar .nav-item .nav-link { color: var(--nc-muted); }
+.topbar .nav-item .nav-link:hover { color: var(--nc-ink); }
+.bg-light { background-color: #faf1ea !important; }
+
+/* listas desplegables (alertas / mensajes) */
+.dropdown-list .dropdown-header {
+    background-color: var(--nc-ink) !important;
+    border: 1px solid var(--nc-ink) !important;
+    color: var(--nc-amber) !important;
+}
+.dropdown-item:hover, .dropdown-item:focus { background-color: #fbeedd; color: var(--nc-ink); }
+.dropdown-item:active { background-color: var(--nc-ink); color: var(--nc-amber); }
+
+/* ---------- Tarjetas ---------- */
+.card {
+    border-radius: .75rem;
+    border: 1px solid rgba(50, 31, 42, .08);
+}
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(50, 31, 42, .08);
+}
+.border-left-primary { border-left: .25rem solid var(--nc-ink) !important; }
+.border-left-success { border-left: .25rem solid var(--nc-green) !important; }
+.border-left-info    { border-left: .25rem solid var(--nc-terra) !important; }
+.border-left-warning { border-left: .25rem solid var(--nc-amber-strong) !important; }
+
+/* ---------- Colores de la plantilla -> paleta de marca ---------- */
+.text-primary { color: var(--nc-amber-deep) !important; }
+.text-success { color: var(--nc-green) !important; }
+.text-info    { color: var(--nc-terra) !important; }
+.text-warning { color: var(--nc-gold-text) !important; }
+.text-secondary { color: var(--nc-muted) !important; }
+
+.bg-primary   { background-color: var(--nc-ink) !important; }
+.bg-success   { background-color: var(--nc-green) !important; }
+.bg-info      { background-color: var(--nc-terra) !important; }
+.bg-warning   { background-color: var(--nc-amber-strong) !important; }
+.bg-secondary { background-color: var(--nc-muted) !important; }
+.bg-dark      { background-color: var(--nc-ink-deep) !important; }
+.icon-circle.bg-warning .text-white { color: var(--nc-ink) !important; }
+.card.bg-warning { color: var(--nc-ink); }
+.card.bg-warning .text-white-50 { color: rgba(50, 31, 42, .7) !important; }
+
+/* puntos de las leyendas de gráficas (coinciden con los colores de la gráfica) */
+i.fa-circle.text-primary { color: var(--nc-ink) !important; }
+i.fa-circle.text-warning { color: var(--nc-amber-strong) !important; }
+i.fa-circle.text-info    { color: var(--nc-terra) !important; }
+
+/* ---------- Botones ---------- */
+.btn-primary {
+    color: var(--nc-ink) !important;
+    background-color: var(--nc-amber) !important;
+    border-color: var(--nc-amber) !important;
+    font-weight: 600;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active,
+.btn-primary:not(:disabled):not(.disabled):active {
+    color: var(--nc-ink) !important;
+    background-color: var(--nc-amber-strong) !important;
+    border-color: var(--nc-amber-strong) !important;
+}
+.btn-primary:focus, .btn-primary.focus { box-shadow: 0 0 0 .2rem rgba(232, 178, 102, .5) !important; }
+
+.btn-outline-primary { color: var(--nc-ink); border-color: var(--nc-ink); }
+.btn-outline-primary:hover { color: var(--nc-amber); background-color: var(--nc-ink); border-color: var(--nc-ink); }
+
+.btn-secondary { background-color: var(--nc-muted); border-color: var(--nc-muted); }
+.btn-secondary:hover { background-color: var(--nc-ink-soft); border-color: var(--nc-ink-soft); }
+
+.btn-success { background-color: var(--nc-green); border-color: var(--nc-green); }
+.btn-success:hover { background-color: #31866a; border-color: #31866a; }
+
+.btn-info { color: #fff; background-color: var(--nc-terra); border-color: var(--nc-terra); }
+.btn-info:hover { color: #fff; background-color: #9c4a31; border-color: #9c4a31; }
+
+.btn-warning { color: var(--nc-ink); background-color: var(--nc-amber-strong); border-color: var(--nc-amber-strong); }
+.btn-warning:hover { color: var(--nc-ink); background-color: #d9a441; border-color: #d9a441; }
+
+/* ---------- Insignias ---------- */
+.badge-primary   { background-color: var(--nc-ink); color: var(--nc-amber); }
+.badge-success   { background-color: #31866a; }
+.badge-info      { background-color: var(--nc-terra); color: #fff; }
+.badge-warning   { background-color: var(--nc-amber-strong); color: var(--nc-ink); }
+.badge-secondary { background-color: var(--nc-muted); }
+
+/* ---------- Formularios ---------- */
+.form-control, .custom-select, .custom-file-label { border-color: #e3d5cb; }
+.form-control:focus, .custom-select:focus {
+    border-color: var(--nc-amber-strong);
+    box-shadow: 0 0 0 .2rem rgba(232, 178, 102, .3);
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: var(--nc-ink);
+    border-color: var(--nc-ink);
+}
+
+/* ---------- Tablas ---------- */
+.table thead th {
+    background-color: var(--nc-ink);
+    color: var(--nc-amber);
+    border-color: var(--nc-ink-soft);
+}
+.table-striped tbody tr:nth-of-type(odd) { background-color: rgba(255, 217, 168, .18); }
+.table-hover tbody tr:hover { background-color: rgba(255, 217, 168, .35); }
+
+/* ---------- Paginación ---------- */
+.page-link { color: var(--nc-ink); }
+.page-link:hover { color: var(--nc-ink); background-color: #fbeedd; }
+.page-item.active .page-link {
+    color: var(--nc-amber);
+    background-color: var(--nc-ink);
+    border-color: var(--nc-ink);
+}
+
+/* ---------- Varios ---------- */
+.progress { background-color: #f1e6de; }
+.progress-bar { background-color: var(--nc-ink); }
+.progress-bar.bg-danger { background-color: #e74a3b !important; }
+.scroll-to-top { background: rgba(50, 31, 42, .6); }
+.scroll-to-top:hover { background: var(--nc-ink); }
+.modal-content { border-radius: .75rem; border: 0; }
+.modal-header { border-bottom-color: rgba(50, 31, 42, .1); }
+.modal-title { font-family: Georgia, serif; font-weight: 700; }
+
+@media (max-width: 767.98px) { .table-responsive { font-size: .82rem; } }

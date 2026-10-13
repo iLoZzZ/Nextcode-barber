@@ -1,0 +1,310 @@
+/* =========================================================
+   NextCodeBarber · estilos del sitio
+   Paleta tomada de la barra de navegación:
+   plum oscuro (#321f2a) + ámbar suave (#ffd9a8)
+   ========================================================= */
+:root {
+    --nc-ink: #321f2a;
+    --nc-ink-deep: #241520;
+    --nc-ink-soft: #4b2f3f;
+    --nc-amber: #ffd9a8;
+    --nc-amber-strong: #e8b266;
+    --nc-amber-deep: #9a6a2f;
+    --nc-cream: #fff8f5;
+    --nc-text-light: #f8e9e8;
+
+    /* Bootstrap 5.3: enlaces y anillo de foco con la paleta */
+    --bs-link-color: #9a6a2f;
+    --bs-link-color-rgb: 154, 106, 47;
+    --bs-link-hover-color: #321f2a;
+    --bs-link-hover-color-rgb: 50, 31, 42;
+    --bs-focus-ring-color: rgba(232, 178, 102, 0.35);
+}
+
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    background: var(--nc-cream);
+    color: #282124;
+}
+
+/* ---------- Barra de navegación ---------- */
+.barra-barber {
+    width: min(1180px, calc(100% - 2rem));
+    margin: 1rem auto 0;
+    background: var(--nc-ink);
+    padding: 0.75rem 1.25rem;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(50, 31, 42, 0.15);
+}
+
+.logo {
+    color: var(--nc-amber);
+    font-size: 1.45rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo:hover,
+.logo:focus {
+    color: var(--nc-amber);
+}
+
+.menu {
+    gap: 0.25rem;
+}
+
+.menu .nav-link {
+    color: var(--nc-text-light);
+    padding: 0.65rem 0.75rem;
+}
+
+.menu .nav-link:hover,
+.menu .nav-link.active {
+    color: var(--nc-amber);
+}
+
+.menu .nav-link.active {
+    box-shadow: inset 0 -2px 0 var(--nc-amber);
+}
+
+.buscador {
+    min-width: min(100%, 250px);
+}
+
+.buscador .form-control {
+    border: 0;
+    min-height: 42px;
+}
+
+.btn-search {
+    background: var(--nc-amber);
+    color: var(--nc-ink);
+    border-color: var(--nc-amber);
+    font-weight: 600;
+}
+
+.btn-search:hover,
+.btn-search:focus {
+    background: var(--nc-amber-strong);
+    border-color: var(--nc-amber-strong);
+    color: var(--nc-ink);
+}
+
+.usuarios {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.usuarios button,
+.usuarios .btn {
+    white-space: nowrap;
+}
+
+/* Formularios desplegables (login / registro) */
+.usuarios .dropdown-menu {
+    border: 0;
+    border-top: 4px solid var(--nc-amber);
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(50, 31, 42, 0.25);
+}
+
+.usuarios .dropdown-menu h5 {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    color: var(--nc-ink);
+}
+
+/* ---------- Botones con la paleta de marca ---------- */
+.btn-primary {
+    --bs-btn-color: var(--nc-ink);
+    --bs-btn-bg: var(--nc-amber);
+    --bs-btn-border-color: var(--nc-amber);
+    --bs-btn-hover-color: var(--nc-ink);
+    --bs-btn-hover-bg: var(--nc-amber-strong);
+    --bs-btn-hover-border-color: var(--nc-amber-strong);
+    --bs-btn-focus-shadow-rgb: 232, 178, 102;
+    --bs-btn-active-color: var(--nc-ink);
+    --bs-btn-active-bg: #d9a441;
+    --bs-btn-active-border-color: #d9a441;
+    --bs-btn-disabled-color: var(--nc-ink);
+    --bs-btn-disabled-bg: var(--nc-amber);
+    --bs-btn-disabled-border-color: var(--nc-amber);
+    font-weight: 600;
+}
+
+.btn-warning {
+    --bs-btn-color: var(--nc-ink);
+    --bs-btn-bg: var(--nc-amber-strong);
+    --bs-btn-border-color: var(--nc-amber-strong);
+    --bs-btn-hover-color: var(--nc-ink);
+    --bs-btn-hover-bg: #d9a441;
+    --bs-btn-hover-border-color: #d9a441;
+    --bs-btn-active-color: var(--nc-ink);
+    --bs-btn-active-bg: #d9a441;
+    --bs-btn-active-border-color: #d9a441;
+}
+
+.btn-info {
+    --bs-btn-color: var(--nc-amber);
+    --bs-btn-bg: var(--nc-ink);
+    --bs-btn-border-color: var(--nc-ink);
+    --bs-btn-hover-color: var(--nc-amber);
+    --bs-btn-hover-bg: var(--nc-ink-soft);
+    --bs-btn-hover-border-color: var(--nc-ink-soft);
+    --bs-btn-active-color: var(--nc-amber);
+    --bs-btn-active-bg: var(--nc-ink-deep);
+    --bs-btn-active-border-color: var(--nc-ink-deep);
+}
+
+.btn-dark {
+    --bs-btn-bg: var(--nc-ink);
+    --bs-btn-border-color: var(--nc-ink);
+    --bs-btn-color: var(--nc-amber);
+    --bs-btn-hover-bg: var(--nc-ink-soft);
+    --bs-btn-hover-border-color: var(--nc-ink-soft);
+    --bs-btn-hover-color: var(--nc-amber);
+    --bs-btn-active-bg: var(--nc-ink-deep);
+    --bs-btn-active-border-color: var(--nc-ink-deep);
+    --bs-btn-active-color: var(--nc-amber);
+}
+
+.btn-secondary {
+    --bs-btn-bg: #6b5a62;
+    --bs-btn-border-color: #6b5a62;
+    --bs-btn-hover-bg: var(--nc-ink-soft);
+    --bs-btn-hover-border-color: var(--nc-ink-soft);
+    --bs-btn-active-bg: var(--nc-ink);
+    --bs-btn-active-border-color: var(--nc-ink);
+}
+
+.btn-outline-light {
+    --bs-btn-color: var(--nc-text-light);
+    --bs-btn-border-color: rgba(255, 217, 168, 0.55);
+    --bs-btn-hover-color: var(--nc-ink);
+    --bs-btn-hover-bg: var(--nc-amber);
+    --bs-btn-hover-border-color: var(--nc-amber);
+    --bs-btn-active-color: var(--nc-ink);
+    --bs-btn-active-bg: var(--nc-amber-strong);
+    --bs-btn-active-border-color: var(--nc-amber-strong);
+}
+
+.dropdown-menu {
+    --bs-dropdown-link-hover-bg: rgba(255, 217, 168, 0.35);
+    --bs-dropdown-link-active-bg: var(--nc-ink);
+    --bs-dropdown-link-active-color: var(--nc-amber);
+}
+
+/* Foco de formularios en ámbar (en vez del azul de Bootstrap) */
+.form-control:focus,
+.form-select:focus,
+.dt-input:focus {
+    border-color: var(--nc-amber-strong);
+    box-shadow: 0 0 0 0.25rem rgba(232, 178, 102, 0.3);
+}
+
+.form-check-input:checked {
+    background-color: var(--nc-ink);
+    border-color: var(--nc-ink);
+}
+
+/* ---------- Contenido ---------- */
+.contenido {
+    max-width: 1180px;
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+}
+
+.contenido h1,
+.titulo-seccion {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    color: var(--nc-ink);
+}
+
+.contenido h1 {
+    font-size: clamp(2.3rem, 5vw, 4.5rem);
+    margin-bottom: 0;
+}
+
+.eyebrow {
+    color: var(--nc-amber-deep);
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 0.18em;
+}
+
+/* Hero principal: plum oscuro con brillo ámbar */
+.barber-pro {
+    background:
+        radial-gradient(circle at 92% 8%, rgba(255, 217, 168, 0.28), transparent 52%),
+        linear-gradient(120deg, var(--nc-ink-deep) 0%, var(--nc-ink) 55%, var(--nc-ink-soft) 100%);
+    width: 100%;
+    min-height: 310px;
+    padding: clamp(2rem, 6vw, 4.5rem);
+    border-radius: 18px;
+    border-bottom: 5px solid var(--nc-amber);
+    color: var(--nc-text-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.barber-pro h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--nc-amber);
+}
+
+.barber-pro p {
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 850px;
+    margin-bottom: 5px;
+}
+
+/* ---------- Tablas (Servicios) ---------- */
+.table thead.table-light {
+    --bs-table-bg: var(--nc-ink);
+    --bs-table-color: var(--nc-amber);
+    --bs-table-border-color: var(--nc-ink-soft);
+}
+
+.table-striped {
+    --bs-table-striped-bg: rgba(255, 217, 168, 0.28);
+    --bs-table-hover-bg: rgba(255, 217, 168, 0.5);
+}
+
+/* DataTables / paginación */
+.pagination {
+    --bs-pagination-color: var(--nc-ink);
+    --bs-pagination-hover-color: var(--nc-ink);
+    --bs-pagination-hover-bg: rgba(255, 217, 168, 0.5);
+    --bs-pagination-focus-color: var(--nc-ink);
+    --bs-pagination-focus-bg: rgba(255, 217, 168, 0.5);
+    --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(232, 178, 102, 0.3);
+    --bs-pagination-active-color: var(--nc-amber);
+    --bs-pagination-active-bg: var(--nc-ink);
+    --bs-pagination-active-border-color: var(--nc-ink);
+}
+
+/* ---------- Modales ---------- */
+.modal-content {
+    border: 0;
+    border-radius: 14px;
+}
+
+.modal-title {
+    font-family: Georgia, serif;
+    font-weight: 700;
+}
+
+@media (max-width: 991.98px) {
+    .menu {
+        padding-top: 1rem;
+    }
+
+    .usuarios {
+        justify-content: flex-start;
+    }
+}
