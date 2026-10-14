@@ -87,37 +87,190 @@
     </nav>
 
 
-    <main class="container contenido">
+    <main class="container my-5">
 
-        <div class="mb-4">
-            <h1>Bienvenidos</h1>
-        </div>
-
-
-        <section class="barber-pro shadow-sm">
-
-            <h2>NextCodeBarber</h2>
-
-            <p>
-              En NextCode Barber combinamos la barbería clásica con las últimas tendencias en cortes urbanos y cuidado de barba. Más que un corte de cabello, te ofrecemos una experiencia de primera: atención personalizada, ambiente cómodo y buenos resultados.
+        <section class="section-custom p-5 mb-5 shadow-sm">
+            <h1 class="display-5 fw-bold title-serif mb-3">Bienvenidos a NextCodeBarber</h1>
+            <p class="lead text-secondary">
+                En NextCode Barber combinamos la barbería clásica con las últimas tendencias en cortes urbanos y cuidado de barba. Más que un corte de cabello, te ofrecemos una experiencia de primera: atención personalizada, ambiente cómodo y excelentes resultados.
             </p>
-
-            <p>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-            </p>
-
-            <a class="btn btn-primary btn-lg mt-3" href="Servicios.html">Nuestros servicios <span aria-hidden="true">&rarr;</span></a>
-
+            <a class="btn btn-detail btn-lg mt-3" href="#servicios">Ver nuestros servicios &rarr;</a>
         </section>
+
+        <section id="servicios" class="mb-5">
+            <h1 class="text-center fw-bold title-serif display-4 mb-5">Nuestros Servicios</h1>
+            
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card card-custom h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title fw-bold mb-0">Corte clásico</h5>
+                                <span class="badge badge-precio">$20.000</span>
+                            </div>
+                            <p class="card-text text-secondary small flex-grow-1">Corte tradicional con acabado a tijera o máquina.</p>
+                            <p class="text-muted small mb-4">Servicio · 20 min</p>
+                            <a href="Reservas.html" class="btn btn-outline-dark btn-sm w-100 py-2">Ver Detalle / Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-custom h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title fw-bold mb-0">Degradado</h5>
+                                <span class="badge badge-precio">$25.000</span>
+                            </div>
+                            <p class="card-text text-secondary small flex-grow-1">Fade bajo, medio o alto con perfilado.</p>
+                            <p class="text-muted small mb-4">Servicio · 20 min</p>
+                            <a href="Reservas.html" class="btn btn-outline-dark btn-sm w-100 py-2">Ver Detalle / Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-custom h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title fw-bold mb-0">Corte + barba</h5>
+                                <span class="badge badge-precio">$30.000</span>
+                            </div>
+                            <p class="card-text text-secondary small flex-grow-1">Corte completo y diseño de barba.</p>
+                            <p class="text-muted small mb-4">Servicio · 30 min</p>
+                            <a href="Reservas.html" class="btn btn-outline-dark btn-sm w-100 py-2">Ver Detalle / Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-custom h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title fw-bold mb-0">Cera mate</h5>
+                                <span class="badge badge-precio">$28.000</span>
+                            </div>
+                            <p class="card-text text-secondary small flex-grow-1">Producto de fijación para peinado natural.</p>
+                            <p class="text-muted small mb-4">Producto · 12 unidades</p>
+                            <button type="button" class="btn btn-outline-dark btn-sm w-100 py-2">Ver Detalle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="empleados" class="section-custom p-4 shadow-sm mb-5">
+            <h1 class="fw-bold title-serif display-5 mb-4">Empleados</h1>
+
+            <div class="row mb-3 align-items-center">
+                <div class="col-md-6 d-flex align-items-center mb-2 mb-md-0">
+                    <label class="me-2 small">Mostrar</label>
+                    <select class="form-select form-select-sm w-auto me-2">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                    <span class="small">registros</span>
+                </div>
+                <div class="col-md-6 d-flex justify-content-md-end align-items-center">
+                    <label class="me-2 small">Buscar:</label>
+                    <input type="search" class="form-control form-control-sm w-auto">
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover table-custom align-middle">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cargo</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Horario semanal</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">David Torres</td>
+                            <td>Barbero</td>
+                            <td>david@nextcode.co</td>
+                            <td>301 555 1122</td>
+                            <td class="small">
+                                Mar-Sáb: 10:00-19:00<br>
+                                Lunes: 09:00-15:00<br>
+                                <span class="text-muted">Domingo: Descanso</span>
+                            </td>
+                            <td class="text-center">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <button class="btn btn-detail">Ver detalle</button>
+                                    <button class="btn btn-edit">Editar</button>
+                                    <button class="btn btn-delete">Eliminar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Mateo Ramírez</td>
+                            <td>Barbero senior</td>
+                            <td>mateo@nextcode.co</td>
+                            <td>300 456 7890</td>
+                            <td class="small">
+                                Lun-Vie: 09:00-18:00<br>
+                                Sábado: 09:00-16:00<br>
+                                <span class="text-muted">Domingo: Descanso</span>
+                            </td>
+                            <td class="text-center">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <button class="btn btn-detail">Ver detalle</button>
+                                    <button class="btn btn-edit">Editar</button>
+                                    <button class="btn btn-delete">Eliminar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Santiago Ríos</td>
+                            <td>Barbero y especialista en barba</td>
+                            <td>santiago@nextcode.co</td>
+                            <td>302 444 9988</td>
+                            <td class="small">
+                                Lun-Vie: 11:00-20:00<br>
+                                Sábado: 09:00-17:00<br>
+                                <span class="text-muted">Domingo: Descanso</span>
+                            </td>
+                            <td class="text-center">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <button class="btn btn-detail">Ver detalle</button>
+                                    <button class="btn btn-edit">Editar</button>
+                                    <button class="btn btn-delete">Eliminar</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row align-items-center mt-3">
+                <div class="col-md-6 text-muted small">
+                    Mostrando 1 a 3 de 3 registros
+                </div>
+                <div class="col-md-6 d-flex justify-content-md-end">
+                    <nav aria-label="Navegación de tabla">
+                        <ul class="pagination pagination-sm mb-0">
+                            <li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
+                            <li class="page-item disabled"><a class="page-link" href="#">&lt;</a></li>
+                            <li class="page-item"><a class="page-link page-link-active" href="#">1</a></li>
+                            <li class="page-item disabled"><a class="page-link" href="#">&gt;</a></li>
+                            <li class="page-item disabled"><a class="page-link" href="#">&raquo;</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="auth.js"></script>
-
-      
 </body>
 
 </html>
